@@ -20,6 +20,26 @@
           <th>&nbsp;</th> <!-- column for buttons-->
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control" ng-model="todo.title"/></td>
+          <td><input class="form-control" ng-model="todo.text"/></td>
+          <td><input class="form-control" ng-model="todo.due"/></td>
+          <td><input type="checkbox" class="form-control" ng-model="todo.notDone"/>&nbsp;<input type="checkbox" class="form-control" ng-model="todo.done"/>
+
+          </td>
+          <td><button class="btn btn-primary" ng-click="addTodo()">Add Button</button></td>
+          <td><button class="btn btn-info" ng-click="deselect()">Clear</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="update()">Update</button></td>
+        </tr>
+        <tr ng-repeat="todo in todolist">
+            <td>{{todo.title}}</td>
+            <td>{{todo.text}}</td>
+            <td>{{todo.due}}</td>
+            <td>{{todo.status}}</td>
+            <td><button class="btn btn-danger" ng-click="remove(todo._id)">Remove</button></td>
+            <td><button class="btn btn-waring" ng-click="edit(todo._id)">Edit</button></td>
+        </tr>
+      </tbody>
     </table>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
