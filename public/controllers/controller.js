@@ -8,6 +8,7 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
     $http.get('/todolist').then(function(response){
       console.log("I got the data requested.");
       $scope.todolist = response.data;
+      $scope.todo = null;
     });
   };
   refresh();
@@ -49,5 +50,7 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
   $scope.deselect = function(){
     $scope.todo = null;
   }; /*close of $scope.deselect*/
+
+
 
 }]); // Close of myApp.controller
